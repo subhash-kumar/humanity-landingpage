@@ -1,0 +1,1532 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NIMS — Fixed Navbar & Carousel</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <style>
+    /* small styling for custom controls and layout */
+    .nims-slider-wrap { min-height: 430px; }
+    .nims-slider-img { object-fit: cover; height: 100%; }
+
+
+    /* Position carousel arrows at the vertical center */
+.placement-carousel-section .carousel-control-prev,
+.placement-carousel-section .carousel-control-next {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 3rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+}
+
+.placement-carousel-section .carousel-control-prev:hover,
+.placement-carousel-section .carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+    /* custom prev/next buttons (keeps accessibility and clickable area) */
+    .nims-control-prev, .nims-control-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 0;
+      background: rgba(0,0,0,0.35);
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: #fff;
+      z-index: 5;
+    }
+    .nims-control-prev { left: 18px; }
+    .nims-control-next { right: 18px; }
+    .nims-control-prev:focus, .nims-control-next:focus { outline: 2px solid #fff; }
+
+    /* make navbar-toggler visible when using Bootstrap CSS */
+    .navbar-toggler { border: none; }
+  </style>
+</head>
+<body>
+
+<!-- =========================
+   Header / Navigation (6 items)
+   IDs used: #hero, #why, #placements, #faculty, #courses, #apply
+   ========================= -->
+<nav aria-label="Main navigation" class="navbar navbar-expand-lg bg-white sticky-top" data-bs-theme="light">
+  <div class="container-fluid px-3 px-lg-4">
+    <a aria-label="NIMS University Home" class="navbar-brand d-flex align-items-center" href="#nims-hero">
+      <img alt="NIMS University" decoding="async" loading="lazy" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/nims-logo.webp?1763380649" style="height:40px"/>
+    </a>
+
+    <!-- Important: include the visual icon inside the button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#rankings">Rankings</a></li>
+        <li class="nav-item"><a class="nav-link" href="#placements">Placements</a></li>
+        <li class="nav-item"><a class="nav-link" href="#labs">Labs</a></li>
+        <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="#why">Why NIMS</a></li>
+        <li class="nav-item"><a class="nav-link" href="#faculty">Faculty</a></li>
+        <li class="nav-item"><a class="nav-link" href="#hostel">Hostel Life</a></li>
+        <li class="nav-item"><a class="nav-link" href="#Testimonial">Testimonials</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- =========================
+   Section: Hero (Slider + Register panel)
+   ID: #hero
+   ========================= -->
+<section class="container-fluid p-0" id="nims-hero">
+  <div class="row g-0 align-items-stretch">
+
+    <!-- LEFT: Slider -->
+    <div class="col-lg-8 position-relative nims-slider-wrap">
+      <div aria-label="Campus images slider" class="carousel slide h-100" data-bs-ride="carousel" id="nims-mainSlider">
+
+        <div class="carousel-inner h-100">
+          <div class="carousel-item active" data-bs-interval="5000">
+            <img alt="NIMS University" class="d-block w-100 nims-slider-img" decoding="async" loading="lazy" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/marik/banner/marik-banner.webp?1763380649" />
+          </div>
+
+          <div class="carousel-item" data-bs-interval="5000">
+            <img alt="Hostel Banner" class="d-block w-100 nims-slider-img" loading="lazy" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/branding/hostel-banner.webp?1763380649" />
+          </div>
+        </div>
+
+        <!-- Custom Controls (using bootstrap-icons) -->
+        <button aria-label="Previous slide" class="nims-control-prev" data-bs-slide="prev" data-bs-target="#nims-mainSlider" type="button">
+          <span class="visually-hidden">Previous</span>
+          <i class="bi bi-chevron-left" aria-hidden="true"></i>
+        </button>
+
+        <button aria-label="Next slide" class="nims-control-next" data-bs-slide="next" data-bs-target="#nims-mainSlider" type="button">
+          <span class="visually-hidden">Next</span>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+        </button>
+
+      </div>
+      <!-- Overlay -->
+    </div>
+
+    <!-- RIGHT: Register panel -->
+    <div class="col-lg-4 d-flex align-items-start align-items-lg-center nims-right-box">
+      <div class="w-100 p-3 p-lg-4">
+        <div class="text-center mb-3 text-white">
+          <div class="fw-bold">Admissions Open for UG &amp; PG Programmes 2025&ndash;26</div>
+          <div class="opacity-75 small">at NIMS University &ndash; Enter your details</div>
+        </div>
+
+        <div class="card shadow-sm border-0 nims-register-card bg-danger">
+          <div class="card-body">
+            <!-- Widget embed -->
+            <div aria-label="Registration form" class="npf_wgts" data-height="370px" data-w="6204dddd5974691bddaf81786b249947" role="region">&nbsp;</div>
+            <noscript>
+              <div class="alert alert-light text-dark mt-3" role="status">
+                Enable JavaScript to load the registration form.
+              </div>
+            </noscript>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Bootstrap JS (bundle includes Popper) -->
+
+
+
+<!-- accreditation -->
+
+
+
+<!-- accreditation -->
+
+<!-- =========================
+       Section: Rankings & Achievements
+       ID: #rankings (kept as internal heading)
+       ========================= -->
+<section class="py-5" id="rankings">
+<div class="container">
+<div class="row mb-4">
+<div class="col-12 col-md-12">
+<h3 class="lead-head">Leading the Way<br />
+Our Rankings &amp; Notable Accomplishments</h3>
+</div>
+</div>
+
+<div class="row align-items-start">
+<div class="col-lg-8 mb-4 mb-lg-0 text-center"><img alt="Active" class="img-fluid" id="activeImage" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/cloud/nirf.webp?1763379003" /></div>
+
+<div class="col-lg-4">
+<div class="scroll-box" id="sliderList">
+<div class="scroll-item active" data-img="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/cloud/nirf.webp">
+<div class="d-flex align-items-start"><img alt="" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/cloud/nirf.webp?1763379003" />
+<p class="mb-0 small">Nims University secures a top ranking in NIRF, showcasing excellence in education and research!</p>
+</div>
+</div>
+
+<div class="scroll-item" data-img="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/cloud/cegr.webp">
+<div class="d-flex align-items-start"><img alt="" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/cloud/cegr.webp?1763379003" />
+<p class="mb-0 small">Nims University recognized by CEGR for excellence in education and academic innovation!</p>
+</div>
+</div>
+
+<div class="scroll-item" data-img="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/cloud/czech.webp">
+<div class="d-flex align-items-start"><img alt="" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/cloud/czech.webp?1763379003" />
+<p class="mb-0 small">Nims University honored with the prestigious Czech 100 Best Award, recognizing our excellence and global impact!</p>
+</div>
+</div>
+
+<div class="scroll-item" data-img="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/cloud/naac.webp">
+<div class="d-flex align-items-start"><img alt="" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/cloud/naac.webp?1763379003" />
+<p class="mb-0 small">Nims University accredited with NAAC, reflecting our commitment to academic excellence and quality education!</p>
+</div>
+</div>
+
+<div class="scroll-item" data-img="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/cloud/qs-i-guage.webp">
+<div class="d-flex align-items-start"><img alt="" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/cloud/qs-i-guage.webp?1763379003" />
+<p class="mb-0 small">Nims University proudly achieves the prestigious Diamond Rating by QS I-GAUGE, recognizing excellence in education and innovation!</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================
+       Section: Accreditation & Affiliation
+       ID: #accreditation
+       ========================= -->
+
+<section class="py-2 mb-5" id="accreditation">
+<div class="container">
+<h3 class="mb-4 lead-head">Accreditation &amp; Affiliation</h3>
+
+<div class="carousel slide" data-bs-interval="7000" data-bs-ride="carousel" id="affiliationCarousel">
+<div class="carousel-inner">
+<div class="carousel-item active">
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-0 rounded shadow-sm">
+<div class="col-6 border-end p-3"><img alt="UGC" class="mb-3" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/accreditation-and-affiliation/accr01.webp?1763379003" style="height: 60px;" />
+<p class="mb-0 small"><span class="red-color">NIMS</span> is Recognized by <strong>University Grants Commission (UGC)</strong> a statutory body of the government of India</p>
+</div>
+
+<div class="col-6 border-end p-3"><img alt="Dental" class="mb-3" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/accreditation-and-affiliation/accr02.webp?1763379003" style="height: 60px;" />
+<p class="mb-0 small"><span class="red-color">NIMS Dental College &amp; Hospital</span> Approved by <strong>Dental Council of India</strong></p>
+</div>
+
+<div class="col-6 border-end p-3"><img alt="Architecture" class="mb-3" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/accreditation-and-affiliation/accr03.webp?1763379003" style="height: 60px;" />
+<p class="mb-0 small"><span class="red-color">NIMS School of Architecture &amp; Planning</span> Approved by <strong>Council of Architecture</strong></p>
+</div>
+
+<div class="col-6 p-3"><img alt="Nursing" class="mb-3" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/accreditation-and-affiliation/accr04.webp?1763379003" style="height: 60px;" />
+<p class="mb-0 small"><span class="red-color">NIMS Nursing College</span> Approved by <strong>Indian Nursing Council</strong></p>
+</div>
+</div>
+</div>
+
+<div class="carousel-item">
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-0 rounded shadow-sm">
+<div class="col-6 border-end p-3"><img alt="Architecture" class="mb-3" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/accreditation-and-affiliation/accr05.webp?1763379003" style="height: 60px;" />
+<p class="mb-0 small"><span class="red-color">NIMS School of Law</span> Approved by <strong> Bar Council of India</strong></p>
+</div>
+
+<div class="col-6 border-end p-3"><img alt="UGC" class="mb-3" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/accreditation-and-affiliation/accr06.webp?1763379003" style="height: 60px;" />
+<p class="mb-0 small"><span class="red-color">NIMS College of Paramedical Technology</span> Approved by <strong> Rajasthan Paramedical Council</strong></p>
+</div>
+
+<div class="col-6 border-end p-3"><img alt="Dental" class="mb-3" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/accreditation-and-affiliation/accr07.webp?1763379003" style="height: 60px;" />
+<p class="mb-0 small"><span class="red-color">NIMS Institute of Pharmacy</span> Approved by <strong> Pharmacy Council of India</strong></p>
+</div>
+
+<div class="col-6 p-3"><img alt="Nursing" class="mb-3" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/accreditation-and-affiliation/accr08.webp?1763379003" style="height: 60px;" />
+<p class="mb-0 small"><span class="red-color">NIMS School of Nursing</span> Approved by <strong>Rajasthan Nursing Council</strong></p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="d-flex justify-content-end mt-4 mb-2" style="margin-top: -40px;">
+  
+  <!-- Prev -->
+  <button class="btn btn-outline-dark btn-sm me-2 bg-black"
+          type="button"
+          data-bs-target="#affiliationCarousel"
+          data-bs-slide="prev">
+
+    <!-- Bootstrap 5 default left arrow icon -->
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+
+  </button>
+
+  <!-- Next -->
+  <button class="btn btn-outline-dark btn-sm bg-black"
+          type="button"
+          data-bs-target="#affiliationCarousel"
+          data-bs-slide="next">
+
+    <!-- Bootstrap 5 default right arrow icon -->
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+
+  </button>
+
+</div>
+
+
+</div>
+</div>
+</section>
+
+
+
+<!-- placement and labs -->
+
+<section class="nims-placements position-relative py-5 py-lg-6" id="placements">
+<div class="nims-bg">&nbsp;</div>
+
+<div class="container position-relative"><!-- Heading -->
+<div class="row align-items-end g-4 g-lg-5">
+<div class="col-lg-6">
+<h2 class="nims-title mb-1">Empowering Futures Through <span class="fw-bold">Strong Placements</span></h2>
+
+<p class="nims-lead text-muted mb-4">Top recruiters, record-breaking offers, and global career opportunities &mdash; NIMS University ensures every student steps into success with confidence.</p>
+<!-- KPI Tiles -->
+
+<div class="row g-3 nims-kpis">
+<div class="col-6 col-md-4">
+<div class="nims-kpi card h-100">
+<div class="card-body">
+<div class="nims-kpi-num">500+</div>
+
+<div class="nims-kpi-text">Fortune Companies Visited</div>
+</div>
+</div>
+</div>
+
+<div class="col-6 col-md-4">
+<div class="nims-kpi card h-100">
+<div class="card-body">
+<div class="nims-kpi-num">1.2 Cr.</div>
+
+<div class="nims-kpi-text">Highest Overseas</div>
+</div>
+</div>
+</div>
+
+<div class="col-6 col-md-4">
+<div class="nims-kpi card h-100">
+<div class="card-body">
+<div class="nims-kpi-num">350+</div>
+
+<div class="nims-kpi-text">Recruiters of IITs/IIMs/NITs&nbsp;also hire from NIMS</div>
+</div>
+</div>
+</div>
+
+<div class="col-6 col-md-4">
+<div class="nims-kpi card h-100">
+<div class="card-body">
+<div class="nims-kpi-num">60 Lac</div>
+
+<div class="nims-kpi-text">Highest Package</div>
+</div>
+</div>
+</div>
+
+<div class="col-6 col-md-4">
+<div class="nims-kpi card h-100">
+<div class="card-body">
+<div class="nims-kpi-num">2000+</div>
+
+<div class="nims-kpi-text">Recruiters hired NIMS students</div>
+</div>
+</div>
+</div>
+
+<div class="col-6 col-md-4">
+<div class="nims-kpi card h-100">
+<div class="card-body">
+<div class="nims-kpi-num">1000+</div>
+
+<div class="nims-kpi-text">Companies offering 10 Lac pa.&nbsp;CTC or above</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Video -->
+<div class="col-lg-6 d-flex align-items-end">
+<div class="nims-video-wrapper-new position-relative w-100 shadow rounded-3 overflow-hidden border">
+<div class="ratio ratio-16x9"><iframe allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" src="https://www.youtube.com/embed/xiERlpl_jcQ" title="Placement Success Stories | Management Students Placed at Bajaj Allianz | Nims University"></iframe></div>
+<!-- <div class="nims-video-caption">
+              Placement Success Stories | Management Students Placed at Bajaj Allianz | Nims University
+            </div> --></div>
+</div>
+</div>
+<!-- Carousels Row -->
+
+<section class="placement-carousel-section py-5" id="placement">
+  <div class="container">
+    <h2 class="h3 text-center mb-4">Placement Highlights</h2>
+
+    <div id="placementCarousel" class="carousel slide position-relative" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row g-3 justify-content-center">
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/placement/humanity-placement-1.webp" class="d-block w-100" alt="Placement 1">
+              </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/placement/humanity-placement-2.webp" class="d-block w-100" alt="Placement 2">
+              </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/placement/humanity-placement-3.webp" class="d-block w-100" alt="Placement 3">
+              </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/placement/humanity-placement-4.webp" class="d-block w-100" alt="Placement 4">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row g-3 justify-content-center">
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/placement/humanity-placement-5.webp" class="d-block w-100" alt="Placement 5">
+              </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/placement/humanity-placement-6.webp" class="d-block w-100" alt="Placement 6">
+              </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/placement/humanity-placement-7.webp" class="d-block w-100" alt="Placement 7">
+              </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/placement/humanity-placement-8.webp" class="d-block w-100" alt="Placement 8">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="row g-3 justify-content-center">
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/placement/humanity-placement-9.webp" class="d-block w-100" alt="Placement 9">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Centered Arrows -->
+      <button class="carousel-control-prev custom-arrow" type="button" data-bs-target="#placementCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next custom-arrow" type="button" data-bs-target="#placementCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
+    </div>
+  </div>
+</section>
+
+<!-- Partner logo slider (keeps existing markup) -->
+
+<div class="row mt-4">
+<div class="col-md-12">
+<div class="slider">
+<div class="slide-track">
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-1.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-2.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-3.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-4.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-5.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-6.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-7.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-8.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-9.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-10.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-11.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-12.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-13.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-14.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-15.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-16.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-17.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-18.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-19.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-20.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-21.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-22.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-23.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-24.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-25.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-26.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-1.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-2.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-3.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-4.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-5.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-6.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-7.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-8.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-9.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-10.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-11.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-12.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-13.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-14.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-15.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-16.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-17.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-18.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-19.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-20.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-21.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-22.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-23.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-24.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-25.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo-26.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo01.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/logo02.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-2.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-4.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-5.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-6.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-7.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-8.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-9.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-10.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-11.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-12.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-13.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-14.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-15.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-16.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-17.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-18.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-19.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-20.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-21.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-22.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-23.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-24.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-25.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-26.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-27.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-28.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-29.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-30.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-31.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-32.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-33.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-34.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-35.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-36.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-37.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-38.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-39.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-40.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-41.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-42.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-43.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-44.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-45.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-46.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-47.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-48.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-49.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-50.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-51.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-52.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-53.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-54.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-55.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-56.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-57.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-58.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-59.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-60.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-62.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-63.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-64.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-65.webp?1763379145" /></span></div>
+
+<div class="slide"><span><img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/logo-partner/All-Pages-66.webp?1763379145" /></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================
+       Section: Cutting-Edge Laboratories
+       ID: #labs
+       ========================= -->
+
+<section class="cutting-edge-section py-5" id="labs">
+  <div class="container">
+    <div class="row g-4 g-lg-5 align-stretch">
+
+      <!-- Left Section -->
+      <div class="col-12 col-lg-12 ce-left">
+        <div class="left-wrap">
+          <h2 class="fw-bold mb-2 cutting-edge-title">State-of-the-Art Creative & Arts Laboratories</h2>
+
+          <p class="cutting-edge-desc mb-4">
+            Our School of Humanities & Arts offers world-class creative studios and practical labs designed to 
+            nurture artistic expression, innovation, and hands-on learning. From sketching and painting studios 
+            to cultural expression labs and digital art spaces — students explore their creativity with 
+            professional-grade tools, guided experience, and real-world exposure.
+          </p>
+
+          <div class="row g-4 mt-auto">
+            <div class="col-12">
+              <div class="lab-gallery">
+
+                <button aria-label="Previous" class="lab-nav prev" type="button">
+                  <span class="visually-hidden">Previous</span>
+                </button>
+
+                <div aria-label="Laboratories gallery" class="lab-scroller" id="labScroller" tabindex="0">
+
+                  <!-- Art Workshop Classroom Session -->
+                  <a class="lab-tile" target="_blank">
+                    <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/labs/Art-Workshop-Classroom-Session.webp" 
+                         alt="Art Workshop Classroom Session">
+                    <span class="lab-tile-caption">Art Workshop & Classroom Studio</span>
+                  </a>
+
+                  <!-- Black & White Portrait Display -->
+                  <a class="lab-tile" target="_blank">
+                    <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/labs/Black-White-Portrait-Display.webp" 
+                         alt="Black and White Portrait Display">
+                    <span class="lab-tile-caption">Portrait & Sketch Display Studio</span>
+                  </a>
+
+                  <!-- Cultural Expression Through Art -->
+                  <a class="lab-tile" target="_blank">
+                    <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/labs/Cultural-Expression-Through-Art.webp" 
+                         alt="Cultural Expression Through Art">
+                    <span class="lab-tile-caption">Cultural Expression & Creative Arts Lab</span>
+                  </a>
+
+                  <!-- Hall of Framed Artworks -->
+                  <a class="lab-tile" target="_blank">
+                    <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/labs/Hall-of-Framed-Artworks.webp" 
+                         alt="Hall of Framed Artworks">
+                    <span class="lab-tile-caption">Art Exhibition & Display Gallery</span>
+                  </a>
+
+                  <!-- Modern Art Collage -->
+                  <a class="lab-tile" target="_blank">
+                    <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/labs/Modern-Art-Collage.webp" 
+                         alt="Modern Art Collage">
+                    <span class="lab-tile-caption">Modern Art & Mixed Media Lab</span>
+                  </a>
+
+                  <!-- Showcase of Student Drawings -->
+                  <a class="lab-tile" target="_blank">
+                    <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/labs/Showcase-of-Student-Drawings.webp" 
+                         alt="Showcase of Student Drawings">
+                    <span class="lab-tile-caption">Student Art Showcase Studio</span>
+                  </a>
+
+                  <!-- Sketching in Progress -->
+                  <a class="lab-tile" target="_blank">
+                    <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/labs/Sketching-in-Progress.webp" 
+                         alt="Sketching in Progress">
+                    <span class="lab-tile-caption">Live Sketching & Drawing Lab</span>
+                  </a>
+
+                  <!-- Student Painting Activity -->
+                  <a class="lab-tile" target="_blank">
+                    <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/labs/Student-Painting-Activity.webp" 
+                         alt="Student Painting Activity">
+                    <span class="lab-tile-caption">Painting & Creative Arts Studio</span>
+                  </a>
+
+                </div>
+
+                <button aria-label="Next" class="lab-nav next" type="button">
+                  <span class="visually-hidden">Next</span>
+                </button>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right Section -->
+  
+
+    </div>
+  </div>
+</section>
+
+<!-- course -->
+
+  <!-- =========================
+       Section: Courses
+       ID: #courses
+
+
+      - =========================
+     Section: Courses
+     ID: #courses
+     Replaced with Social-Sciences, Humanities, Physical-Education, Clinical-Psychology
+     ========================= -->
+<section id="courses" class="py-5 bg-white">
+  <div class="container">
+    <div class="hero-stats mb-5">
+      <div class="hero-inner">
+        <h2 class="hero-heading">Build Your Skills With Our Courses</h2>
+
+        <div class="stats-grid" style="padding-bottom: 10%;">
+          <div class="stat"><div class="stat-inner"><div class="stat-badge">450+</div><div class="stat-pill">Programmes</div></div></div>
+          <div class="stat"><div class="stat-inner"><div class="stat-badge">24+</div><div class="stat-pill">Colleges</div></div></div>
+          <div class="stat"><div class="stat-inner"><div class="stat-badge">20000+</div><div class="stat-pill">Student In<br>Campus</div></div></div>
+          <div class="stat"><div class="stat-inner"><div class="stat-badge">2000+</div><div class="stat-pill">Faculty (National &amp;<br>International)</div></div></div>
+          <div class="stat"><div class="stat-inner"><div class="stat-badge">20+</div><div class="stat-pill">University Research<br>Centre</div></div></div>
+          <div class="stat"><div class="stat-inner"><div class="stat-badge">1000+</div><div class="stat-pill">International<br>Students</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cards-wrap">
+      <div class="cards-grid">
+
+        <!-- Social Sciences -->
+        <div class="course-card" tabindex="0" role="button" data-course="social-sciences" aria-label="Open Social Sciences programs">
+          <div class="icon-badge">
+            <!-- replace image URL if you have a specific icon -->
+            <img src="icons/social.png" alt="Social Sciences">
+          </div>
+          <h6 class="card-title">Social<br>Sciences</h6>
+          <div class="card-cta">
+            <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/neit/course/arrow-right.webp" class="openCourseModal" data-course="social-sciences" alt="Open Social Sciences">
+          </div>
+        </div>
+
+        <!-- Humanities & Liberal Arts -->
+        <div class="course-card" tabindex="0" role="button" data-course="humanities" aria-label="Open Humanities & Liberal Arts programs">
+          <div class="icon-badge">
+            <img src="icons/humanity.png" alt="Humanities & Liberal Arts">
+          </div>
+          <h6 class="card-title">Humanities &amp;<br>Liberal Arts</h6>
+          <div class="card-cta">
+            <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/neit/course/arrow-right.webp" class="openCourseModal" data-course="humanities" alt="Open Humanities">
+          </div>
+        </div>
+
+        <!-- Physical Education -->
+        <div class="course-card" tabindex="0" role="button" data-course="physical-education" aria-label="Open Physical Education programs">
+          <div class="icon-badge">
+            <img src="icons/physical.png" alt="Physical Education">
+          </div>
+          <h6 class="card-title">Physical<br>Education</h6>
+          <div class="card-cta">
+            <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/neit/course/arrow-right.webp" class="openCourseModal" data-course="physical-education" alt="Open Physical Education">
+          </div>
+        </div>
+
+        <!-- Clinical Psychology -->
+        <div class="course-card" tabindex="0" role="button" data-course="clinical-psychology" aria-label="Open Clinical Psychology programs">
+          <div class="icon-badge">
+            <img src="icons/clinical.png" alt="Clinical Psychology">
+          </div>
+          <h6 class="card-title">Clinical<br>Psychology</h6>
+          <div class="card-cta">
+            <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/neit/course/arrow-right.webp" class="openCourseModal" data-course="clinical-psychology" alt="Open Clinical Psychology">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hidden course HTML data (display:none) -->
+<div id="courseDataHTML" style="display:none;" aria-hidden="true">
+
+  <!-- Social Sciences -->
+  <div id="course-social-sciences" data-title="Social-Sciences">
+ 
+
+    <ul class="ug">
+      <li>B.A. in Economics</li>
+      <li>B.Sc. in Economics</li>
+      <li>B.A. in Geography</li>
+      <li>B.Sc. in Geography</li>
+      <li>B.A. in History</li>
+      <li>B.A. in Political Science</li>
+      <li>Bachelor of Social Work (BSW)</li>
+      <li>B.A. in Sociology</li>
+      <li>B.Sc. Geoinformatics</li>
+    </ul>
+
+    <ul class="pg">
+      <li>M.A. in Economics</li>
+      <li>M.Sc. in Economics</li>
+      <li>M.A. in Geography</li>
+      <li>M.Sc. in Geography</li>
+      <li>M.A. in History</li>
+      <li>M.A. in Political Science</li>
+      <li>Master of Social Work (MSW)</li>
+      <li>M.Sc. Geoinformatics</li>
+      <li>M.A. in Sociology</li>
+    </ul>
+
+    <ul class="phd">
+      <li>Ph.D. in Economics</li>
+      <li>Ph.D. in Geography</li>
+    </ul>
+  </div>
+
+  <!-- Humanities & Liberal Arts -->
+  <div id="course-humanities" data-title="Humanities-Liberal-Arts">
+   
+
+    <ul class="ug">
+      <li>B.A. in English</li>
+      <li>Bachelor of Visual Arts (BVA)</li>
+      <li>Bachelor of Fine Arts (BFA)</li>
+      <li>Bachelor of Performing Arts</li>
+    </ul>
+
+    <ul class="pg">
+      <li>M.A. in English</li>
+      <li>Master of Visual Arts</li>
+      <li>Master of Fine Arts</li>
+      <li>Master of Performing Arts</li>
+    </ul>
+  </div>
+
+  <!-- Physical Education -->
+  <div id="course-physical-education" data-title="Physical-Education">
+    <ul class="topPrograms">
+      <li>B.A. in Physical Education</li>
+      <li>B.Sc. in Physical Education</li>
+    </ul>
+
+    <ul class="ug">
+      <li>B.A. in Physical Education</li>
+      <li>B.Sc. in Physical Education</li>
+    </ul>
+
+    <ul class="pg">
+      <li>M.A. in Physical Education</li>
+      <li>M.Sc. in Physical Education</li>
+    </ul>
+  </div>
+
+  <!-- Clinical Psychology -->
+  <div id="course-clinical-psychology" data-title="Clinical-Psychology">
+    <ul class="topPrograms">
+      <li>B.A. in Clinical Psychology</li>
+      <li>B.Sc. in Clinical Psychology</li>
+    </ul>
+
+    <ul class="ug">
+      <li>B.A. in Clinical Psychology</li>
+      <li>B.Sc. in Clinical Psychology</li>
+    </ul>
+
+    <ul class="pg">
+      <li>M.A. in Psychology</li>
+      <li>M.Sc. in Clinical Psychology</li>
+      <li>M.Phil. in Psychology</li>
+    </ul>
+
+    <ul class="phd">
+      <li>Ph.D. in Psychology</li>
+    </ul>
+  </div>
+
+</div>
+<!-- end hidden data -->
+
+<!-- Modal (IDs used by script) - keep unchanged -->
+<div class="modal fade" id="courseModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content p-4">
+      <div class="modal-header border-0">
+        <h5 id="modalCourseName" class="modal-title">Programs</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-lg-6">
+            <h6>Undergraduate</h6>
+            <ul id="col-left-ug"></ul>
+
+            <h6 class="mt-3">Integrated</h6>
+            <ul id="col-left-int"></ul>
+          </div>
+
+          <div class="col-lg-6">
+            <h6>Postgraduate</h6>
+            <ul id="col-right-pg"></ul>
+
+            <h6 class="mt-3">Ph.D.</h6>
+            <ul id="col-right-phd"></ul>
+
+            <div id="col-right-diploma-wrap" class="mt-3" style="display:none;">
+              <h6>Diploma</h6>
+              <ul id="col-right-diploma"></ul>
+            </div>
+
+            <div id="col-top-programs-wrap" class="mt-3" style="display:none;">
+              <h6>Top Programs</h6>
+              <ul id="col-top-programs"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+ 
+ <!-- =========================
+       Section: Why NIMS
+       ID: #why
+       ========================= --> 
+<section class="nims-first-choice position-md-relative py-5 mt-md-5 mb-md-5" id="why">
+<div class="container position-relative">
+<div class="row align-items-center"><!-- Left Text -->
+<div class="col-lg-6 text-white pe-lg-5">
+<h2 class="fw-bold mb-3">Why NIMS should be your first choice</h2>
+
+<p>At NIMS University, we offer an unparalleled opportunity to earn an international degree that commands global recognition, opening doors to career prospects both at home and abroad. With a strong emphasis on international exposure, studying here can set you apart in the professional world, giving you a competitive edge.</p>
+</div>
+<!-- Right Video -->
+
+<div class="col-lg-6 position-md-relative">
+<div class="nims-video-wrapper position-relative"><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/22CvPW6zjm4" title="NIMS University AI ML Programs" width="100%"></iframe></div>
+</div>
+</div>
+<!-- Bottom Info Boxes -->
+
+<div class="nims-info-row d-flex flex-wrap justify-content-center text-center mt-5">
+<div class="nims-info-box">Global Presence: Only Indian university with a campus link in the U.S. <b>&mdash; Florida Tech University.</b></div>
+
+<div class="nims-info-box highlight"><b>150+ </b><br />
+International Tie-Ups</div>
+
+<div class="nims-info-box"><b>Startup Support</b><br />
+Guiding students from ideas to successful ventures.</div>
+
+<div class="nims-info-box highlight"><b>Advanced Labs</b> World-class infrastructure with Siemens and AWS labs.</div>
+
+<div class="nims-info-box"><b>90%</b><br />
+Doctorate Faculties</div>
+</div>
+</div>
+</section>
+
+<section class="nims-life-wrap">
+<div class="container py-3 py-md-4">
+<h2 class="lead-title">Live the <span class="brand">NIMS Life</span> &mdash; Inspiring,<br class="d-none d-md-inline" />
+Vibrant, Unmatched.</h2>
+
+<div class="video-grid"><!-- 1. Advanced Laboratories (BIG LEFT) -->
+<div class="video-card span-2-rows" data-start="0" data-ytid="T2zYEz2om-Q">
+<div class="player-host">&nbsp;</div>
+
+<div class="thumb"><img alt="Advanced Laboratories" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/nims-life/advance lab.webp?1763380297" /></div>
+
+<div class="play-btn">
+<div class="circle"><svg viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div>
+</div>
+
+<div class="v-content">
+<h4 class="v-title accent-underline">Advanced Laboratories</h4>
+
+<p class="v-desc">Our labs empower students across disciplines to explore, experiment, and innovate.</p>
+</div>
+</div>
+<!-- 2. Celebrating Culture -->
+
+<div class="video-card" data-start="0" data-ytid="31Y-FJeqNAc">
+<div class="player-host">&nbsp;</div>
+
+<div class="thumb"><img alt="Celebrating Culture" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/nims-life/celebrating culture.webp?1763380297" /></div>
+
+<div class="play-btn">
+<div class="circle"><svg viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div>
+</div>
+
+<div class="v-content">
+<h4 class="v-title">Celebrating Culture</h4>
+</div>
+</div>
+<!-- 3. International Collaboration (3rd column, spans 2 rows) -->
+
+<div class="video-card span-2-rows place-col-3" data-start="18" data-ytid="VTSDr45e4Hg">
+<div class="player-host">&nbsp;</div>
+
+<div class="thumb"><img alt="International Collaboration" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/nims-life/international-collabration.webp?1763380297" /></div>
+
+<div class="play-btn">
+<div class="circle"><svg viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div>
+</div>
+
+<div class="v-content">
+<h4 class="v-title">International Collaboration</h4>
+
+<p class="v-desc">Collaborated with esteemed universities &amp; institutions across the globe.</p>
+</div>
+</div>
+<!-- 4. Vibrant Sports Culture -->
+
+<div class="video-card" data-start="109" data-ytid="mNKQ2Am5aH4">
+<div class="player-host">&nbsp;</div>
+
+<div class="thumb"><img alt="Vibrant Sports Culture" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/nims-life/Vibrant-Sports-Culture.webp?1763380297" /></div>
+
+<div class="play-btn">
+<div class="circle"><svg viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div>
+</div>
+
+<div class="v-content">
+<h4 class="v-title">Vibrant Sports Culture</h4>
+</div>
+</div>
+<!-- 5. Life Beyond the Classroom -->
+
+<div class="video-card" data-start="0" data-ytid="-4BMYhbEEU4">
+<div class="player-host">&nbsp;</div>
+
+<div class="thumb"><img alt="Life Beyond the Classroom" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/nims-life/bparrk.webp?1763380297" /></div>
+
+<div class="play-btn">
+<div class="circle"><svg viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div>
+</div>
+
+<div class="v-content">
+<h4 class="v-title">Life Beyond the Classroom</h4>
+</div>
+</div>
+<!-- 6. Campus Life -->
+
+<div class="video-card" data-start="0" data-ytid="Y3Rp_eleeE0">
+<div class="player-host">&nbsp;</div>
+
+<div class="thumb"><img alt="Campus Life" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/nims-life/campus-l-fe.webp?1763380297" /></div>
+
+<div class="play-btn">
+<div class="circle"><svg viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div>
+</div>
+
+<div class="v-content">
+<h4 class="v-title">Campus Life</h4>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- faculty -->
+
+<section class="faculty-section" id="faculty">
+  <div class="container">
+    <div class="faculty-header">
+      <h2>Meet Our Esteemed Faculty — Over 25+ Experienced Professors</h2>
+      <p>Develop real-world tech-skills with our experienced faculties from IITs, Harvard, Stanford, NITs, IIITs ...</p>
+    </div>
+
+    <div class="position-relative">
+      <button aria-label="Scroll left" class="faculty-controller left" id="scrollLeft">
+        <svg viewBox="0 0 24 24"><path d="M15.4 6.4 14 5l-6 6 6 6 1.4-1.4L10.8 12z"></path></svg>
+      </button>
+
+      <div class="faculty-track" id="facultyTrack">
+
+        <!-- Prof. Nishi Fatma -->
+        <article class="faculty-card">
+          <div class="img-wrap">
+            <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/faculty/Nishi-Fatma.webp" 
+                 alt="Prof. Nishi Fatma">
+          </div>
+          <div class="faculty-name">Prof. Nishi Fatma</div>
+          <div class="faculty-role">Professor & Head</div>
+          <div class="faculty-desc">Department of Psychology</div>
+        </article>
+
+        <!-- Dr. Deepika Varshney -->
+        <article class="faculty-card">
+          <div class="img-wrap">
+            <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/faculty/Deepika-Varshney.webp" 
+                 alt="Dr. Deepika Varshney">
+          </div>
+          <div class="faculty-name">Dr. Deepika Varshney</div>
+          <div class="faculty-role">Professor and Principal</div>
+          <div class="faculty-desc">13+ Yr Exp., PhD in Geography, UGC NET Qualified, UGC Women Post Doctoral Fellowship Awarded</div>
+        </article>
+
+        <!-- Dr. Nirmala Singh Rathore -->
+        <article class="faculty-card">
+          <div class="img-wrap">
+            <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/faculty/Nirmala-Singh-Rathore.webp" 
+                 alt="Dr. Nirmala Singh Rathore">
+          </div>
+          <div class="faculty-name">Dr. Nirmala Singh Rathore</div>
+          <div class="faculty-role">Associate Professor</div>
+          <div class="faculty-desc">12+ Yr Exp., Ph.D in Psychology, Qualified State Level Eligibility Test, MBA</div>
+        </article>
+
+        <!-- Dr. Suresh Kumar -->
+        <article class="faculty-card">
+          <div class="img-wrap">
+            <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/faculty/Suresh-Kumar.webp" 
+                 alt="Dr. Suresh Kumar">
+          </div>
+          <div class="faculty-name">Dr. Suresh Kumar</div>
+          <div class="faculty-role">Associate Professor</div>
+          <div class="faculty-desc">15+ Yr Exp., Ph.D and M.Phil in English</div>
+        </article>
+
+        <!-- Dr. Bikash Dev Chhura -->
+        <article class="faculty-card">
+          <div class="img-wrap">
+            <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/faculty/Bikash-Dev-Chhura.webp" 
+                 alt="Dr. Bikash Dev Chhura">
+          </div>
+          <div class="faculty-name">Dr. Bikash Dev Chhura</div>
+          <div class="faculty-role">Assistant Professor</div>
+          <div class="faculty-desc">3+ Yr Exp., Ph.D and M.Phil in Political Science</div>
+        </article>
+
+        <!-- Dr. Sunita -->
+        <article class="faculty-card">
+          <div class="img-wrap">
+            <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/faculty/Sunita.webp" 
+                 alt="Dr. Sunita">
+          </div>
+          <div class="faculty-name">Dr. Sunita</div>
+          <div class="faculty-role">Assistant Professor</div>
+          <div class="faculty-desc">7.5 Yr Exp., Ph.D and M.Phil in Physical Education</div>
+        </article>
+
+        <!-- Dr. Lopamudra Das -->
+        <article class="faculty-card">
+          <div class="img-wrap">
+            <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/faculty/Lopamudra-Das.webp" 
+                 alt="Dr. Lopamudra Das">
+          </div>
+          <div class="faculty-name">Dr. Lopamudra Das</div>
+          <div class="faculty-role">Assistant Professor</div>
+          <div class="faculty-desc">3+ Yr Exp., Ph.D in Sociology & Social Work, UGC NET/JRF Qualified</div>
+        </article>
+
+        <!-- Dr. Md Emdadul Hoque -->
+        <article class="faculty-card">
+          <div class="img-wrap">
+            <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/faculty/Md-Emdadul-Hoque.webp" 
+                 alt="Dr. Md Emdadul Hoque">
+          </div>
+          <div class="faculty-name">Dr. Md Emdadul Hoque</div>
+          <div class="faculty-role">Assistant Professor</div>
+          <div class="faculty-desc">3 Yr Exp., Ph.D and M.Phil in Geography, UGC NET/JRF Qualified in Geography</div>
+        </article>
+
+        <!-- Dr. Rashmi Dwivedi -->
+        <article class="faculty-card">
+          <div class="img-wrap">
+            <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/faculty/Rashmi-Dwivedi.webp" 
+                 alt="Dr. Rashmi Dwivedi">
+          </div>
+          <div class="faculty-name">Dr. Rashmi Dwivedi</div>
+          <div class="faculty-role">Assistant Professor</div>
+          <div class="faculty-desc">2 Yr Exp., Ph.D in Economics</div>
+        </article>
+
+        <!-- Dr. Prakriti Sushmita -->
+        <article class="faculty-card">
+          <div class="img-wrap">
+            <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/faculty/Prakriti-Sushmita.webp" 
+                 alt="Dr. Prakriti Sushmita">
+          </div>
+          <div class="faculty-name">Dr. Prakriti Sushmita</div>
+          <div class="faculty-role">Assistant Professor</div>
+          <div class="faculty-desc">1.6+ Yr Exp., Ph.D in Psychology, Published various research papers</div>
+        </article>
+
+        <!-- Mr. Jitendra Singh -->
+        <article class="faculty-card">
+          <div class="img-wrap">
+            <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/faculty/Jitendra-Singh.webp" 
+                 alt="Mr. Jitendra Singh">
+          </div>
+          <div class="faculty-name">Mr. Jitendra Singh</div>
+          <div class="faculty-role">Assistant Professor</div>
+          <div class="faculty-desc">22 Years Teaching and Research Experience, MFA in Fine Arts</div>
+        </article>
+
+        <!-- Mr. Virendra Pratap Singh -->
+        <article class="faculty-card">
+          <div class="img-wrap">
+            <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/faculty/Virendra-Pratap-Singh.webp" 
+                 alt="Mr. Virendra Pratap Singh">
+          </div>
+          <div class="faculty-name">Mr. Virendra Pratap Singh</div>
+          <div class="faculty-role">Assistant Professor</div>
+          <div class="faculty-desc">3.5+ Yr Exp. in Visual Arts, Awarded with Padamshri Kripal Singh Shekhawat Samman</div>
+        </article>
+
+        <!-- Mr. Khushal Nanda -->
+        <article class="faculty-card">
+          <div class="img-wrap">
+            <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/faculty/Khushal-Nanda.webp" 
+                 alt="Mr. Khushal Nanda">
+          </div>
+          <div class="faculty-name">Mr. Khushal Nanda</div>
+          <div class="faculty-role">Assistant Professor</div>
+          <div class="faculty-desc">MA in Performing Arts</div>
+        </article>
+
+        <!-- Dr. Anjum Shaheen -->
+        <article class="faculty-card">
+          <div class="img-wrap">
+            <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/faculty/Anjum-Shaheen.webp" 
+                 alt="Dr. Anjum Shaheen">
+          </div>
+          <div class="faculty-name">Dr. Anjum Shaheen</div>
+          <div class="faculty-role">Assistant Professor</div>
+          <div class="faculty-desc">M.Phil & Ph.D in Geography & Assistant Director, Ph.D Cell</div>
+        </article>
+
+        <!-- Dr. Amit Kumar -->
+        <article class="faculty-card">
+          <div class="img-wrap">
+            <img src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/humanity/faculty/Amit-Kumar.webp" 
+                 alt="Dr. Amit Kumar">
+          </div>
+          <div class="faculty-name">Dr. Amit Kumar</div>
+          <div class="faculty-role">Assistant Professor (Sociology & Social Work)</div>
+          <div class="faculty-desc"></div>
+        </article>
+
+      </div>
+
+      <button aria-label="Scroll right" class="faculty-controller right" id="scrollRight">
+        <svg viewBox="0 0 24 24"><path d="m8.6 17.6 1.4 1.4 6-6-6-6L8.6 6.4 13.2 11z"></path></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- hostel  -->
+
+<section class="py-5 bg-white" id="hostel">
+<div class="container">
+<div class="text-center mb-4">
+<h2 class="fw-bold">Hostel Life at NIMS</h2>
+
+<p class="text-muted mb-0">Well-furnished hostels with modern facilities ensure comfort, safety, and a lively community experience for all residents.</p>
+</div>
+
+<div class="row g-3 align-items-stretch">
+<div class="col-lg-6">
+<div class="video-card ar-16x9" data-start="0" data-ytid="bjcRo1UmEGk">
+<div class="player-host">&nbsp;</div>
+
+<div class="thumb"><img alt="Hostel Life Video Thumbnail" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/hostel-life/thumbnail.webp?1763380264" /></div>
+
+<div class="play-btn">
+<div class="circle"><svg viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></div>
+</div>
+
+<div class="v-content">
+<h4 class="v-title accent-underline">Hostel Life</h4>
+
+<p class="v-desc">A quick look at the comfort, safety, and community on campus.</p>
+</div>
+</div>
+</div>
+
+<div class="col-lg-6">
+<div class="row g-3 align-items-stretch">
+<div class="col-6">
+<div class="hostel-equal-tile tile"><img alt="Hostel building exterior" class="img-cover" decoding="async" loading="lazy" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/hostel-life/hostel-building.webp?1763380264" /></div>
+</div>
+
+<div class="col-6 d-flex flex-column gap-3">
+<div class="hostel-half-tile tile"><img alt="Hostel mess dining area" class="img-cover" decoding="async" loading="lazy" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/hostel-life/mess.webp?1763380264" /></div>
+
+<div class="hostel-half-tile tile"><img alt="Hostel room bed" class="img-cover" decoding="async" loading="lazy" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/hostel-life/hostel-bed.webp?1763380264" /></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="row text-center mt-5 g-4">
+<div class="col-6 col-md-4 col-lg-2 feature"><img alt="24 x 7 Power Supply" decoding="async" loading="lazy" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/hostel-life/24 X 7 Power Supply.webp?1763380264" />
+<p>24 x 7 Power Supply</p>
+</div>
+
+<div class="col-6 col-md-4 col-lg-2 feature"><img alt="Safe Water Supply" decoding="async" loading="lazy" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/hostel-life/Safe Water Supply.webp?1763380264" />
+<p>Safe Water Supply</p>
+</div>
+
+<div class="col-6 col-md-4 col-lg-2 feature"><img alt="AC and Non AC room options" decoding="async" loading="lazy" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/hostel-life/AC and Non AC room options.webp?1763380264" />
+<p>VRV (Multi-Split Type Air Conditioners) Hot &amp; Cold</p>
+</div>
+
+<div class="col-6 col-md-4 col-lg-2 feature"><img alt="Wi-Fi Internet Service" decoding="async" loading="lazy" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/hostel-life/Wi-Fi Internet Service by Jio.webp?1763380264" />
+<p>Wi-Fi Internet Service</p>
+</div>
+
+<div class="col-6 col-md-4 col-lg-2 feature"><img alt="Visitors &amp; Guest Room" decoding="async" loading="lazy" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/hostel-life/Visitors &amp; Guest Room.webp?1763380264" />
+<p>Visitors &amp; Guest Room</p>
+</div>
+
+<div class="col-6 col-md-4 col-lg-2 feature"><img alt="Well Equipped Reading Room" decoding="async" loading="lazy" src="https://nimsuniversity.edu.in/landing-pages/landing-page-images/lp/hostel-life/Well Equipped Reading Room.webp?1763380264" />
+<p>Reading Room</p>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================
+       Section: Student Experiences (video strip)
+       ID: #student-experiences (internal)
+       ========================= -->
+
+<section class="video-section py-5 " id="Testimonial">
+<div class="container">
+<div class="row g-4 align-items-center">
+<div class="col-lg-5">
+<h2 class="fw-bold mb-2">Student Experiences</h2>
+
+<p class="text-secondary mb-0">Get a glimpse of campus life through student stories and event highlights &mdash; unfiltered moments, personal journeys, and vibrant celebrations that reflect the true spirit and energy of Nims University.</p>
+</div>
+
+<div class="col-lg-7">
+<div class="player-wrap">
+<div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-sm"><!-- main player intentionally starts with empty src to avoid autoplay --><iframe allow="encrypted-media" allowfullscreen="" id="mainVideo" src="" title="NIMS Student Stories"></iframe></div>
+
+<div class="video-caption" id="overlayCaption">Hear from Divya Kumari, a BBA student at NIMS University.</div>
+</div>
+</div>
+</div>
+
+<div class="mt-4">
+<div class="thumb-strip" id="thumbStrip"><!-- Thumbnail strip is left for your script.js to populate; kept placeholder container --></div>
+
+<div class="strip-controls"><button aria-label="Previous video" class="nav-btn" id="btnPrev" type="button">Prev</button><button aria-label="Next" class="nav-btn" id="btnNext" type="button">Next</button></div>
+</div>
+</div>
+</section>
+<!-- =========================
+       Section: Hostel Life
+       ID: #hostel
+       ========================= --><!-- =========================
+       Footer / Apply CTA
+       ID: #apply
+       ========================= -->
+
+<footer class="mt-5" id="apply">
+<div class="footer-top py-3 py-md-4" style="background-color:#7c1416; color:#fff;">
+<div class="container">
+<div class="row align-items-center justify-content-between">
+<div class="col-md-8">
+<h6 class="fw-bold text-uppercase mb-1">Address</h6>
+
+<p class="mb-0" style="line-height:1.6;">NIMS UNIVERSITY RAJASTHAN<br />
+Jaipur-Delhi Highway (NH-11C), Jaipur &ndash; 303121, Rajasthan, INDIA</p>
+</div>
+
+<div class="col-md-3 text-md-end mt-3 mt-md-0"><a class="btn btn-light btn-sm fw-semibold text-danger px-3 rounded-pill shadow-sm" href="#">Apply Today </a></div>
+</div>
+</div>
+</div>
+
+<div class="footer-bottom text-center py-2" style="background-color:#000; color:#bbb; font-size:14px;">&copy; 2025 NIMS University Jaipur. All rights reserved.</div>
+</footer>
+
+</body>
+
+  <!-- Bootstrap Bundle -->
+  <script src="bootstrap.min.js"></script>
+
+  <!-- NPF widget -->
+  <script src="https://widgets.nopaperforms.com/emwgts.js" type="text/javascript" defer></script>
+
+  <!-- YouTube Iframe API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+
+  <!-- App JS (keeps your external file) -->
+  <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+ 
+</body>
+</html>
+
+
+
+
